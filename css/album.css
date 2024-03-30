@@ -1,0 +1,110 @@
+body {
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.cd-wrap {
+  background: linear-gradient(120deg, #0272a4, #f6a564);
+  width: 100vw;
+  height: 100vh;
+}
+.cd-wrap .album {
+  position: absolute;
+  top: 47%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  visibility: hidden;
+  opacity: 0;
+}
+@media only screen and (max-width:720px) {
+  .cd-wrap .album {
+    top: 40%;
+    left: 55%;
+    width: 300px;
+    height: 200px;
+  }
+}
+.cd-wrap .album.active {
+  visibility: visible;
+  opacity: 1;
+  left: 50%;
+}
+.cd-wrap .album.active .disk {
+  left: 180px;
+  transition-delay: 0.5s;
+}
+@media only screen and (max-width:720px) {
+  .cd-wrap .album.active {
+    left: 45%;
+  }
+  .cd-wrap .album.active .disk {
+    left: 35%;
+    transition-delay: 0.5s;
+  }
+}
+.cd-wrap .album .cover-img {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  box-shadow: 2px 14px 40px rgba(0, 0, 0, 0.3);
+}
+.cd-wrap .album .cover-img img {
+  width: inherit;
+  height: inherit;
+}
+@media only screen and (max-width:720px) {
+  .cd-wrap .album .cover-img {
+    width: 250px;
+    height: 250px;
+  }
+}
+.button-wrap {
+  position: fixed;
+  bottom: 5vh;
+  text-align: center;
+  width: 100%;
+}
+.button-wrap button {
+  border: none;
+  padding: 6px 20px;
+  margin: 0 3px;
+  background-color: #000;
+  color: #fff;
+}
+.button-wrap button:hover {
+  background-color: #fff;
+  color: #000;
+}
+.button-wrap .point-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+.button-wrap .point-wrap li {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0px 5px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-out;
+}
+.button-wrap .point-wrap li.active {
+  background-color: rgb(0, 0, 0);
+}
+
+@keyframes rotateAni {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=album.css.map */

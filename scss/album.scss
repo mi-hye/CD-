@@ -1,0 +1,119 @@
+$mobile: "only screen and (max-width:720px)";
+$t_size: 16px;
+
+body {
+	overflow: hidden;
+	font-size: $t_size;
+}
+.cd-wrap {
+	background: linear-gradient(120deg, #0272a4, #f6a564);
+	// transition: background 1s ease-out;
+	width: 100vw;
+	height: 100vh;
+	// touch-action: none;
+
+	.album {
+		position: absolute;
+		top: 47%;
+		left: 57%;
+		transform: translate(-50%, -50%);
+		width: 600px;
+		height: 400px;
+		visibility: hidden;
+		opacity: 0;
+		// transition : all .4s ease-in-out;
+
+		@media #{$mobile} {
+			top: 40%;
+			left: 55%;
+			width: 300px;
+			height: 200px;
+		}
+
+		&.active {
+			visibility: visible;
+			opacity: 1;
+			left: 50%;
+			.disk {
+				left: 180px;
+				transition-delay: 0.5s;
+			}
+			@media #{$mobile} {
+				left: 45%;
+				.disk {
+					left: 35%;
+					transition-delay: 0.5s;
+				}
+			}
+		}
+		.cover-img {
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			box-shadow: 2px 14px 40px rgba(0, 0, 0, 0.3);
+			img {
+				width: inherit;
+				height: inherit;
+			}
+			@media #{$mobile} {
+				width: 250px;
+				height: 250px;
+			}
+		}
+		.disk {
+		}
+	}
+}
+
+.button-wrap {
+	position: fixed;
+	bottom: 5vh;
+	text-align: center;
+	width: 100%;
+
+	button {
+		border: none;
+		padding: 6px 20px;
+		margin: 0 3px;
+		background-color: #000;
+		color: #fff;
+		// transition: all .3s ease-out;
+
+		&:hover {
+			background-color: #fff;
+			color: #000;
+		}
+	}
+
+	.point-wrap {
+		position: relative;
+		display: inline-block;
+		padding: 0 10px;
+
+		li {
+			position: relative;
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin: 0px 5px;
+			text-align: center;
+			cursor: pointer;
+			background-color: rgba(0, 0, 0, 0.4);
+			border-radius: 50%;
+			transition: background-color 0.3s ease-out;
+
+			&.active {
+				background-color: rgba(0, 0, 0, 1);
+			}
+		}
+	}
+}
+
+@keyframes rotateAni {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

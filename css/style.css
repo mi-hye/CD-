@@ -1,1 +1,6 @@
 @import "./reset.css";
+@import "./album.css";
+
+body {
+	overflow: hidden;
+}
