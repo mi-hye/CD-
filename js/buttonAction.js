@@ -36,6 +36,8 @@ function pageChangeFunc(pageNum, totalNum) {
 		$albums[i].classList.remove("active");
 	});
 	$albums[pageNum].classList.add("active"); // 현재 페이지의 album을 활성화
+
+	$diskInners[pageNum].style.background = bgArray[pageNum][0];
 }
 
 document.addEventListener("DOMContentLoaded", readyButton);
